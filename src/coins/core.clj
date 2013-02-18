@@ -1,5 +1,4 @@
-(ns coins.core
-  (:use midje.sweet))
+(ns coins.core)
 
 (defn reduce-amount [amount coin]
   (- amount (* coin (quot amount coin))))
