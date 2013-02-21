@@ -9,13 +9,22 @@
 
 (def divisible-by-5 (make-divider 5))
 
+(defn print-fizz? [x]
+  (divisible-by-3 x))
+
+(defn print-buzz? [x]
+  (divisible-by-5 x))
+
+(defn print-fizzbuzz? [x]
+  (and (print-fizz? x)
+       (print-buzz? x)))
+
 (defn print-output [x]
-  (if (and (divisible-by-3 x)
-           (divisible-by-5 x))
+  (if (print-fizzbuzz? x)
     "FizzBuzz"
-    (if (divisible-by-3 x)
+    (if (print-fizz? x)
       "Fizz"
-      (if (divisible-by-5 x)
+      (if (print-buzz? x)
         "Buzz"
         x))))
 
